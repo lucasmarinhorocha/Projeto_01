@@ -12,6 +12,7 @@ import Ocorrencias from './components/Ocorrencias/Ocorrencias';
 import Documentos from './components/Documentos/Documentos';
 import Presenca from './components/Presenca/Presenca';
 import AdminUsers from './components/Admin/AdminUsers';
+import { HomeTiles } from './components/Home/HomeTiles';
 
 // Componente ProtectedRoute
 interface ProtectedRouteProps {
@@ -47,6 +48,15 @@ const AppContent: React.FC = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+
+        <Route
+          path="/home"
+          element={
+            <ProtectedRoute>
+              <HomeTiles />
+            </ProtectedRoute>
+          }
+        />
 
         <Route
           path="/dashboard"
@@ -115,7 +125,7 @@ const AppContent: React.FC = () => {
         />
 
         {/* Redirect padrão */}
-        <Route path="/" element={isAuthenticated ? <Navigate to="/dashboard" /> : <Navigate to="/login" />} />
+        <Route path="/" element={isAuthenticated ? <Navigate to="/home" /> : <Navigate to="/login" />} />
       </Routes>
     </Router>
   );

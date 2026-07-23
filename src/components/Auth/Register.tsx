@@ -47,7 +47,7 @@ const Register: React.FC = () => {
     try {
       setIsLoading(true);
       await authService.register({ nome, email, password });
-      navigate('/dashboard');
+      navigate('/home');
     } catch (err) {
       const message = err instanceof Error ? err.message : 'Erro ao registrar';
       setLocalError(message);

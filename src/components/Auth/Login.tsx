@@ -46,7 +46,7 @@ export const Login: React.FC = () => {
     try {
       const credentials: LoginRequest = { email, password };
       await login(credentials);
-      navigate('/dashboard');
+      navigate('/home');
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Erro ao fazer login';
       setLocalError(errorMessage);
