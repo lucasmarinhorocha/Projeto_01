@@ -29,6 +29,7 @@ import {
   Menu as MenuIcon,
   Close as CloseIcon,
   Notifications as NotificationsIcon,
+  Apps as HomeTilesIcon,
 } from '@mui/icons-material';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -72,6 +73,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   };
 
   const menuItems = [
+    { label: 'Home', path: '/home', icon: <HomeTilesIcon /> },
     { label: 'Dashboard', path: '/dashboard', icon: <DashboardIcon /> },
     { label: 'Insumos', path: '/insumos', icon: <InsumoIcon /> },
     { label: 'Ocorrências', path: '/ocorrencias', icon: <OcorrenciaIcon /> },
